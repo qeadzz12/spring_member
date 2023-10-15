@@ -2,11 +2,7 @@ package com.itwillbs.domain;
 
 import java.sql.Timestamp;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 
 
 
