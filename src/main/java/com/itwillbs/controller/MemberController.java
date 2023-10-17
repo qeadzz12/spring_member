@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.itwillbs.domain.MemberVO;
@@ -20,23 +21,27 @@ public class MemberController {
 	@Autowired
 	MemberDAO dao;
 	
-	@GetMapping(value = "MemberJoin")
-	public void insertMember() {
-		logger.debug("insertMember 페이지 호출");
-		logger.debug("getTime 출력: "+dao.getTime());
-	}//
-	
-	@GetMapping(value = "MemberJoinAction")
-	public void insertMemberPro() {
-		logger.debug("insertMemberPro 페이지 호출");
-		
-		MemberVO vo = new MemberVO();
-		vo.setUserid("test3");
-		vo.setUserpw("1234");
-		
+	@GetMapping(value = "/insert")
+	public String insertMemberGET() {
+		logger.debug("insertMemberGET() 호출");
 //		logger.debug("getTime 출력: "+dao.getTime());
 		
-//		return "/member/MemberJoin";
+		return "/member/memberJoin";
+	}//
+	
+	@PostMapping(value = "/insert")
+	public String insertMemberPOST(MemberVO vo) {
+		logger.debug("insertMemberPOST() 호출");
+		logger.debug("userInfo: "+vo);
+		
+		int result = dao.insertMember(vo);
+		logger.debug("회원가입 동작 끝");
+		
+		if(result == 1) {
+			return "/member/memberLogin";
+		}else {
+			return "/member/memberJoin";
+		}
 	}//
 
 	

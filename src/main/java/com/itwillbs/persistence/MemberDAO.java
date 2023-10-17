@@ -10,7 +10,7 @@ public interface MemberDAO {
 	public String getTime();	
 	
 	// 회원가입기능 
-	public void insertMember(MemberVO vo);
+	public int insertMember(MemberVO vo);
 	
 	// 로그인 기능
 	public MemberVO loginMember(MemberVO loginVO);

@@ -48,13 +48,13 @@ public class MemberDAOImpl implements MemberDAO {
 
 
 	@Override
-	public void insertMember(MemberVO vo) {
+	public int insertMember(MemberVO vo) {
 		// 디비연결-O		
 		// SQL작성(Mapper)-O		
 		//SQL실행(Mapper 호출)
 		//sqlSession.insert(SQL구문);
 		//sqlSession.insert(SQL구문,SQL전달할 정보);
-		sqlSession.insert(NAMESPACE + "insertMember", vo);
+		return sqlSession.insert(NAMESPACE + "insertMember", vo);
 	}
 
 
