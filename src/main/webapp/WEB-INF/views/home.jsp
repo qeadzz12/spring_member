@@ -16,17 +16,18 @@
 		<c:otherwise>
 			<h1>
 				${sessionScope.id } 님 환영합니다
-				<input type="button" value="로그아웃" 
-					onclick="location.href='/member/logout'"> <br>
 			</h1>
+			<h3>
+				<a href="/member/info">회원정보</a>
+				<a href="/member/logout">로그아웃</a>
+			</h3>
 		</c:otherwise>
 	</c:choose>
+	
 		
 	<P>  The time on the server is ${serverTime}. </P>
 	
-	<h3>
-		<a href="/member/info">회원정보</a>
-	</h3>
+	
 	
 </body>
 </html>

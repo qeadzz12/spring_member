@@ -83,10 +83,15 @@ public class MemberController {
 	
 	//회원정보 조회 ------------------------------------------
 	@GetMapping(value = "/info")
-	public String infoGET() {
+	public String infoGET(HttpSession session, Model model) {
+		logger.debug("infoGET() 호출");
 		
+		String id = (String)session.getAttribute("id");
+		MemberVO vo = service.getMemberInfo(id);
 		
-		return "";
+		model.addAttribute(vo);
+		
+		return "/member/memberInfo";
 	}
 
 	

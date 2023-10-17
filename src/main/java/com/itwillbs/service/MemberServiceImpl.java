@@ -28,6 +28,12 @@ public class MemberServiceImpl implements MemberService {
 		logger.debug("memberLogin() 호출");
 		return dao.loginMember(vo);
 	}
+	
+	@Override
+	public MemberVO getMemberInfo(String id) {
+		logger.debug("getMemberInfo() 호출");
+		return dao.getMember(id);
+	}
 
 	
 	
