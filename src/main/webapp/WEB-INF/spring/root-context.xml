@@ -50,7 +50,9 @@
 	<!-- SqlSessionTemplate 객체 - 디비연결(자동),mybatis설정,SQL실행,자원해제,트랜잭션관리,쓰레드안정성 관리 -->
 	
 	<!-- dao -->
-	<context:component-scan base-package="com.itwillbs.persistence"/>	
+	<context:component-scan base-package="com.itwillbs.persistence"/>
+	<!-- service -->
+	<context:component-scan base-package="com.itwillbs.service"/>	
 		
 		
 </beans>

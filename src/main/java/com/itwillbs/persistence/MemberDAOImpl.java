@@ -41,7 +41,7 @@ public class MemberDAOImpl implements MemberDAO {
 		//SQL작성 & pstmt객체
 		//SQL실행
 		String time 
-		 = sqlSession.selectOne("com.itwillbs.mapper.MemberMapper.getTime");
+		 = sqlSession.selectOne(NAMESPACE+ "getTime");
 		
 		return time;
 	}
@@ -64,8 +64,8 @@ public class MemberDAOImpl implements MemberDAO {
 		System.out.println(" DAOImpl : 해당 SQL구문 실행 ");
 		System.out.println(" DAO VO : "+ loginVO);
 		
-		MemberVO resultVO
-		   =sqlSession.selectOne(NAMESPACE + "loginMember2",loginVO);	
+		MemberVO resultVO = null;
+		resultVO = sqlSession.selectOne(NAMESPACE + "loginMember2",loginVO);	
 		
 		System.out.println(" DAOImpl : 결과 "+resultVO);
 		
