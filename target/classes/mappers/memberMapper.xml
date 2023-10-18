@@ -26,7 +26,7 @@
    
    <update id="updateMember">
       update tbl_member set username=#{username},updatedate=now() 
-	  where userid=#{userid} and userpw=#{userpw}	   
+	  where userid=#{userid} and userpw=#{userpw}   
    </update>
    
    <delete id="deleteMember">
